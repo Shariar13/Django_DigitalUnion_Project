@@ -1,0 +1,564 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Contact</title>
+  <style>
+    .chairman {
+      height: auto;
+      width: 50%;
+      border: 1px solid black;
+      margin: auto;
+      text-align: center;
+    }
+
+    .chairman-details {
+      /* float: left; */
+      margin-left: 7px;
+    }
+
+    .chairman-photo {
+      /* float: left; */
+    }
+
+    .crousal1 {
+      /* float: right; */
+      border-left: 1px solid black;
+      width: 100%;
+      height: auto;
+      margin: auto;
+    }
+
+    .member-details {
+      height: auto;
+      width: 50%;
+      border: 1px solid black;
+      margin: auto;
+    }
+
+    .add-details {
+      width: 50%;
+      height: auto;
+      margin: auto;
+      border: 1px solid black;
+    }
+
+    .shochib {
+      height: auto;
+      width: 50%;
+      border: 1px solid black;
+      margin: auto;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 479px) {
+      .chairman {
+        height: auto;
+        width: 99%;
+        border: none;
+        margin: auto;
+      }
+
+      .chairman-details {
+        margin-left: 0px;
+        text-align: center;
+        margin: auto;
+        float: none;
+      }
+
+      .chairman-photo {
+        text-align: center;
+        height: auto;
+        width: 99%;
+      }
+
+      .crousal1 {
+        clear: both;
+        border-left: none;
+        width: 100%;
+        height: 400px;
+      }
+
+      .member-details {
+        height: auto;
+        width: 100%;
+        border: none;
+        margin: auto;
+        overflow: scroll;
+
+      }
+
+      .add-details {
+        width: 100%;
+        height: auto;
+        margin: auto;
+        border: none;
+      }
+
+      .shochib {
+        height: auto;
+        width: 100%;
+        border: none;
+        margin: auto;
+        overflow: scroll;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="chairman">
+    <img class="chairman-photo" src="{% static 'chairman.jpg' %}" height="229px" width="229px">
+    <div class="chairman-details">
+      <b>নাম : মোঃ খুরশিদ আলম মিঞা।</b>
+      <br>
+      ইউপি চেয়ারম্যান
+      <br>
+      ওয়ার্ড নং :৩
+      <br>
+      <hr>
+      মোবাইল : ০১৭১১০৬২৫৩০
+      <br>
+      ফোন (অফিস) : ০১৯৭১০৬২৫৩০
+      <br>
+      ইমেইল : maharazpurup@yahoo.com
+      <br>
+      গ্রাম: বিষয়খালী।
+      <br>
+      ডাকঘর: খড়িখালী।
+      <br>
+      উপজেলা ও জেলা: ঝিনাইদহ।
+      <br>
+
+    </div>
+    <div class="crousal1">
+
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+            aria-label="Slide 5"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
+            aria-label="Slide 6"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6"
+            aria-label="Slide 7"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7"
+            aria-label="Slide 8"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8"
+            aria-label="Slide 9"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="9"
+            aria-label="Slide 10"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'chairman.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5></h5>
+              <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'chairman1.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5></h5>
+              <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'chairman2.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5></h5>
+              <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'chairman3.png' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5></h5>
+              <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'chairman4.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5></h5>
+              <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'chairman5.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5></h5>
+              <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'chairman6.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5></h5>
+              <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'chairman7.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5></h5>
+              <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'chairman8.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5></h5>
+              <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'chairman9.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5></h5>
+              <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+  <br>
+  <p style="text-align: center;"><b>সচিব</b></p>
+  <div class="shochib">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ছবি</th>
+          <th scope="col">নাম</th>
+          <th scope="col">পদবি</th>
+          <th scope="col">নাম্বার</th>
+          <th scope="col">ইমেইল</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img src="{% static 'shochib.png' %}" height="50px"></td>
+          <td><b>মোঃ শহিদুল ইসলাম</b></td>
+          <td>ইউপি সচিব</td>
+          <td>01716500228</td>
+          <td>maharazpurup@gmail.com</td>
+        </tr>
+      <tbody>
+
+      </tbody>
+    </table>
+
+  </div>
+  </div>
+  <br>
+  <p style="text-align: center;"><b>সদস্য বিবরণ</b></p>
+
+  <div class="member-details">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ছবি</th>
+          <th scope="col">নাম</th>
+          <th scope="col">পদবি</th>
+          <th scope="col">নাম্বার</th>
+          <th scope="col">ওয়ার্ড</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img src="{% static '789.jpg' %}" height="50px"></td>
+          <td>শাবানা বেগম</td>
+          <td>ইউনিয়ন পরিষদের মেম্বার</td>
+          <td>০১৭৫৭১৬৭৮৮৮</td>
+          <td>789</td>
+        </tr>
+        <tr>
+          <td><img src="{% static '1.jpg' %}" height="50px"></td>
+          <td>মো: জালাল উদ্দিন</td>
+          <td>ইউনিয়ন পরিষদের মেম্বার</td>
+          <td>০১৭২৬১১৪৫০৫</td>
+          <td>১</td>
+        </tr>
+        <tr>
+          <td><img src="{% static '2.jpg' %}" height="50px"></td>
+          <td>আতিয়ার আলী</td>
+          <td>ইউনিয়ন পরিষদের মেম্বার</td>
+          <td>০১৯২৩১৮৬১৩৮</td>
+          <td>২</td>
+        </tr>
+        <tr>
+          <td><img src="{% static '3.jpg' %}" height="50px"></td>
+          <td>মো: আতিকুর রহমান</td>
+          <td>ইউনিয়ন পরিষদের মেম্বার</td>
+          <td>০১৯১৯৮৭৯১২৭</td>
+          <td>৩</td>
+        </tr>
+        <tr>
+          <td><img src="{% static '4.jpg' %}" height="50px"></td>
+          <td>মো: সোলাইমান সরকার</td>
+          <td>ইউনিয়ন পরিষদের মেম্বার</td>
+          <td>০১৭২৩১৬১১১৩</td>
+          <td>৪</td>
+        </tr>
+        <tr>
+          <td><img src="{% static '5.jpg' %}" height="50px"></td>
+          <td>মো: এরশাদ আলী</td>
+          <td>ইউনিয়ন পরিষদের মেম্বার</td>
+          <td>০১৮২২৯২৩৫৫০</td>
+          <td>৫</td>
+        </tr>
+        <tr>
+          <td><img src="{% static '6.jpg' %}" height="50px"></td>
+          <td>এস.এম. নাইমুর রহমান</td>
+          <td>ইউনিয়ন পরিষদের মেম্বার</td>
+          <td>০১৯১২০৭২২০৬</td>
+          <td>৬</td>
+        </tr>
+        <tr>
+          <td><img src="{% static '7.jpg' %}" height="50px"></td>
+          <td>আহাম্মদ আলী</td>
+          <td>ইউনিয়ন পরিষদের মেম্বার</td>
+          <td>০১৯১৬৭০৬০৭৯</td>
+          <td>৭</td>
+        </tr>
+        <tr>
+          <td><img src="{% static '8.jpg' %}" height="50px"></td>
+          <td>মো: সেলিম হোসেন</td>
+          <td>ইউনিয়ন পরিষদের মেম্বার</td>
+          <td>০১৯৩৭৫৫৪১৫৯</td>
+          <td>৮</td>
+        </tr>
+        <tr>
+          <td><img src="{% static '9.jpg' %}" height="50px"></td>
+          <td>মো: শাহা আলম</td>
+          <td>ইউনিয়ন পরিষদের মেম্বার</td>
+          <td>০১৭৬৩৪৪৯৬৭১</td>
+          <td>৯</td>
+        </tr>
+        <tr>
+          <td><img src="{% static '456.jpg' %}" height="50px"></td>
+          <td>মোছা: হালিমা বেগম</td>
+          <td>ইউনিয়ন পরিষদের মেম্বার</td>
+          <td>০১৯৩৯২০১৬৪৩</td>
+          <td>৪৫৬</td>
+        </tr>
+        <tr>
+          <td><img src="{% static '123.jpg' %}" height="50px"></td>
+          <td>মোছা: নুরুন্নাহার</td>
+          <td>ইউনিয়ন পরিষদের মেম্বার</td>
+          <td>০১৭৮৭৪২৮৬৯৯</td>
+          <td>১২৩</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+  <br>
+  <p style="text-align: center;"><b>গ্রাম পুলিশ</b></p>
+  <div class="member-details">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ক্রমিক</th>
+          <th scope="col">নাম</th>
+          <th scope="col">পদবি</th>
+          <th scope="col">নাম্বার</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>১</td>
+          <td>বিমল</td>
+          <td>দফাদার</td>
+          <td>০১৯২১-৯৫২২২৪</td>
+        </tr>
+        <tr>
+          <td>২</td>
+          <td>মনিন্দ্রনাথ</td>
+          <td>গ্রামপুলিশ</td>
+          <td>০১৭৫৭-৫২০৫৫৮</td>
+        </tr>
+        <tr>
+          <td>৩</td>
+          <td>সুজিত</td>
+          <td>গ্রামপুলিশ</td>
+          <td>০১৯৪৫-৯১৪০৪২</td>
+        </tr>
+        <tr>
+          <td>৪</td>
+          <td>শংকর</td>
+          <td>গ্রামপুলিশ</td>
+          <td>০১৭২২-৬৫৩৫৫৩</td>
+        </tr>
+        <tr>
+          <td>৫</td>
+          <td>মায়া রানী</td>
+          <td>মহিলা গ্রামপুলিশ</td>
+          <td>০১৭৭৯৮৯৩৪৩৭</td>
+        </tr>
+        <tr>
+          <td>৬</td>
+          <td>মজনু</td>
+          <td>গ্রামপুলিশ</td>
+          <td>০১৭৩৫-২৩১৫৫৯</td>
+        </tr>
+        <tr>
+          <td>৭</td>
+          <td>উজ্জ্বল</td>
+          <td>গ্রামপুলিশ</td>
+          <td>০১৯১৩-৮৯১৬৮১</td>
+        </tr>
+        <tr>
+          <td>৮</td>
+          <td>শ্যামল</td>
+          <td>গ্রামপুলিশ</td>
+          <td>০১৯১২-৭৩৫৪০০</td>
+        </tr>
+        <tr>
+          <td>৯</td>
+          <td>শুশিল</td>
+          <td>গ্রামপুলিশ</td>
+          <td>০১৯৩০-৭৩৬২৮৯</td>
+        </tr>
+        <tr>
+          <td>১০</td>
+          <td>রঘুনাথ</td>
+          <td>গ্রামপুলিশ</td>
+          <td>০১৯৬০-৯৪২০০৯</td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+  </div>
+  <br>
+  <p style="text-align: center;"><b>উদ্যোক্তা</b></p>
+  <div class="member-details">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ক্রমিক</th>
+          <th scope="col">নাম</th>
+          <th scope="col">পদবি</th>
+          <th scope="col">নাম্বার</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>১</td>
+          <td>অনুপ কুমার অধিকারী</td>
+          <td>উদ্যোক্তা</td>
+          <td>০১৭১৩-৯১৫৬০৩</td>
+        </tr>
+        <tr>
+          <td>২</td>
+          <td>মোছাঃ মরিয়ম খাতুন</td>
+          <td>উদ্যোক্তা</td>
+          <td>০১৭৩১-৪৯৮৬৯৬</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="add-details">
+    <b>সাংগঠনিক কাঠামো</b>
+    <br>
+
+    ২৫-৩০ হাজার লোক অধ্যুষিত প্রতিটি ইউনিয়নে ৯টি ওয়ার্ডে বিভক্ত।
+    <br>
+    মহারাজপুর ইউনিয়র ২২টি গ্রাম মিল এই সংগঠিত ।
+    <br>
+    ১ জন চেয়ারম্যান- ইউনিয়নবাসীর প্রত্যক্ষ ভোটে নির্বাচিত।
+    <br>
+    ৯ জন সদস্য - সংশ্লিষ্ট ওয়ার্ডের সাধারন ভোটারদের দ্বারা প্রত্যক্ষভাবে ভোটে নির্বাচিত।
+    <br>
+    ৩ জন সংরক্ষিত সদস্য - ৩টি ওয়ার্ডের(১,২,৩ ও ৪,৫,৬ এবং ৭,৮,৯) সাধারন ভোটারদের দ্বারা (সাবেক ৩টি ওয়ার্ড অনুযায়ী)
+    <br>
+    পৃথকভাবে প্রত্যক্ষ ভোটের মাধ্যমে নির্বাচিত।
+
+  </div>
+  <div class="add-details">
+
+    <p><b>ইউপি চেয়ারম্যানের বাণী</b></p>
+    স্থায়ী সরকার তথা ইউনিয়ন পরিষদের উৎপত্তি ১৮৭০ সালে।অর্থনৈতিক প্রশাসনিক ও রাজনৈতিক কারণে পল্লী অঞ্চলের ভিত্তি সৃদুঢ
+    <br>
+    করার লক্ষ্যে প্রথমত চৌকিদার পঞ্চায়েত উদ্ভব ঘটে।কালের বিবর্তনে সর্বশেষ ১৮৭৩ সালে এই স্থানীয় সরকার ব্যবস্থা নামকরন
+    <br>
+    করা হয় ইউনিয়ন পরিষদ।তৃণমূল পর্যায়ে সার্বিক উন্নয়নে অবকাঠামো নির্মান স্থানীয় সম্পদের সুষ্ঠ ব্যবহার ও উন্নয়ন
+    <br>
+    নিশ্চিতকরণ এবং সরকারের বিভিন্ন সামাজিক কার্যক্রম বাস্তবায়ন সহ ইত্যাদি ইউনিয়ন পরিষদের মৌলিক দায়িত্ব। এছাড়া আইন
+    <br>
+    শৃখলা রক্ষা, গ্রাম আদালতের মাধ্যমে ন্যায় বিচার প্রতিষ্ঠা, জন্ম মৃত্য নিবন্ধন, অনলাইনে সকল প্রকার কাজ সম্পাদন,
+    <br>
+    বিভিন্ন শুমারী, বিভিন্ন প্রকার সনদ প্রদান, শিক্ষা,স্বাস্থ্য,স্যানিটেশন সহ নানা বিধ সেবা মূলক কর্মকান্ড সম্পাদন করে
+    <br>
+    থাকে। উল্লিখিত কর্মকান্ড বর্তমান সরকারের ঘোষিত একবিংশ শতাব্দীর চ্যালেঞ্জ মোকাবিলায় ডিজিটাল বাংলাদেশ গড়ার অঙ্গীকার
+    <br>
+    বাস্তবায়নের ওয়েব পোর্টাল হলো একটি অংশ, এই অংশটুকুর কাজ করার জন্য মানণীয় প্রধান মন্ত্রী সহ এটুআই এর সকল কর্মকর্তা
+    <br>
+    ও কর্মচারীকে ধন্যবাদ জানাই।
+    <br>
+    <br>
+
+
+
+    জনা্ব মো: খুরশিদ আলম
+    <br>
+
+    বর্তমান চেয়ারম্যান
+    <br>
+    ৭নং মহারাজপুর ইউনিয়ন পরিষদ
+    <br>
+    ঝিনাইদহ সদর।
+
+
+
+  </div>
+
+
+
+
+
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script> -->
+  {% endblock %}
+</body>
+
+</html>

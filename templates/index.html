@@ -1,0 +1,263 @@
+{% extends "main.html" %}
+{% block content %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Home</title>
+
+    <style>
+        .bg {
+            background-color: rgb(115, 8, 177);
+        }
+
+        .card {
+            width: 90%;
+            margin: auto;
+        }
+
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            background-color: white;
+        }
+
+
+
+        .news {
+            width: 160px
+        }
+
+        .news-scroll a {
+            text-decoration: none
+        }
+
+        .dot {
+            height: 6px;
+            width: 6px;
+            /* margin-left: 3px; */
+            /* margin-right: 3px; */
+            /* margin-top: 2px !important; */
+            background-color: black;
+            border-radius: 50%;
+            display: inline-block
+        }
+
+
+
+
+        .footer-class>ul>li {
+            display: inline;
+            color: rgb(129, 129, 129);
+            margin: 30px;
+        }
+
+
+
+
+        .post-box {
+            width: 80%;
+            margin: auto;
+            background-color: white;
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+            -moz-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+            box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+        }
+
+        body {
+            scrollbar-width: none;
+            scrollbar-color: rgb(115, 8, 177) rgb(115, 8, 177);
+        }
+
+        .status-box {
+            border: 1px solid rgb(199, 199, 199);
+            width: 60%;
+            border-radius: 5px;
+            margin: auto;
+            margin-top: 29px;
+            background-color: white;
+        }
+        
+
+
+
+        /* Responsive */
+        @media screen and (max-width: 479px) {
+
+
+            .post-box {
+                width: 99%;
+                margin: auto;
+                margin-top: 20px;
+                background-color: white;
+                border-radius: 5px;
+                -webkit-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+                -moz-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+                box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+            }
+
+            .status-box {
+                border: 1px solid rgb(199, 199, 199);
+                width: 99%;
+                border-radius: 5px;
+                margin: auto;
+                margin-top: 29px;
+                background-color: white;
+            }
+
+         
+
+
+
+
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 900px) {
+         
+
+            .status-body {
+                text-align: center;
+                color: #3498db;
+                width: 97%;
+                margin: auto;
+                height: auto;
+                background-color: rgb(211, 211, 211);
+                border: 2px solid #3498db;
+            }
+
+            .post-box-style {
+                width: 90%;
+                margin-top: 50px;
+                height: 50px;
+                text-align: center;
+            }
+
+           
+
+          
+            
+
+            .status {
+                color: black;
+                margin-top: 20px;
+                background-color: white;
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                height: auto;
+
+            }
+
+         
+            .icon {
+
+                display: none;
+            }
+
+            .comment-button {
+                width: 39%;
+                font-size: 13px;
+            }
+
+
+            .post-box {
+                width: 99%;
+                margin: auto;
+                margin-top: 20px;
+                background-color: white;
+                border-radius: 5px;
+                -webkit-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+                -moz-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+                box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+            }
+
+            .status-box {
+                border: 1px solid rgb(199, 199, 199);
+                width: 99%;
+                border-radius: 5px;
+                margin: auto;
+                margin-top: 29px;
+                background-color: white;
+            }
+
+         
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- circular -->
+
+    {% for post in object_list %}
+    
+    <div class="status-box">
+        <div style="text-align:left;">
+            <p style="color:white;background-color: rgb(115, 8, 177);" class="card-header"><a
+                    style="color:white;background-color: rgb(115, 8, 177);text-decoration: none;" href="">
+                    <b>{{post.author_name }}</b></a>
+                <small>
+                    <span style="margin-right: 10px;float: right;">
+                        {{ post.date|naturaltime }}</span></small>
+            </p>
+
+            <p style="color:black;margin:20px;">{{ post.status|safe|truncatewords:"50" }} <a
+                    style="text-decoration: none;color: rgb(115, 8, 177);" href="{% url 'comments' post.pk%}">Continue</a></p>
+
+        </div>
+        <hr style="color: black;">
+        <div style="margin: auto;width: 90%;text-align: center;">
+            {% csrf_token %}
+            <a href=""><button
+                    style="margin-bottom:10px;width: 30%;height:29px;border:black;border-radius:11px;background-color: #f3f3f3 ; color: black;">Report</button></a>
+            <a href="{% url 'comments' post.pk%}"><button
+                    style="margin-bottom:10px;margin-left:10px;margin-right:10px;width: 30%;height:29px;border:black;border-radius:11px;background-color: #f3f3f3 ; color: black;">Comment</button></a>
+{% if user.username == post.post_author %}
+  
+
+                    <a href="{% url 'edit' post.pk %}"><button
+                        style="margin-bottom:10px;width: 30%;height:29px;border:black;border-radius:11px;background-color: #f3f3f3 ; color: black;">Edit</button></a>
+                        {% else %}
+            <a href=""><button
+                    style="margin-bottom:10px;width: 30%;height:29px;border:black;border-radius:11px;background-color: #f3f3f3 ; color: black;">Share</button></a>
+                    {% endif %}
+           
+        </div>
+
+    </div>
+
+    {% endfor %}
+    <!-- circular -->
+
+
+
+
+
+
+    {% comment %} <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script> {% endcomment %}
+
+        {% endblock %}
+
+</body>
+
+</html>

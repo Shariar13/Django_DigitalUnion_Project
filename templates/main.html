@@ -1,0 +1,797 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+
+    <style>
+        .bg {
+            background-color: rgb(115, 8, 177);
+        }
+
+        .card {
+            width: 90%;
+            margin: auto;
+        }
+
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            background-color: white;
+        }
+
+
+
+        .news {
+            width: 160px
+        }
+
+        .news-scroll a {
+            text-decoration: none
+        }
+
+        .dot {
+            height: 6px;
+            width: 6px;
+            /* margin-left: 3px; */
+            /* margin-right: 3px; */
+            /* margin-top: 2px !important; */
+            background-color: black;
+            border-radius: 50%;
+            display: inline-block
+        }
+
+
+
+
+        .footer-class>ul>li {
+            display: inline;
+            color: rgb(129, 129, 129);
+            margin: 30px;
+        }
+
+
+        .shortcut-section {
+            float: left;
+            width: 15%;
+            overflow: scroll;
+            height: 700px;
+            margin-left: 20px;
+            position: fixed;
+
+        }
+
+        .shortcut-section>a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .shortcut-section-right>a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .shortcut-section-right {
+            float: right;
+            width: 15%;
+            position: fixed;
+            right: 0px;
+            height: 700px;
+            overflow: scroll;
+        }
+
+        .post-box {
+            width: 80%;
+            margin: auto;
+            background-color: white;
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+            -moz-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+            box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+        }
+
+        body {
+            scrollbar-width: none;
+            scrollbar-color: rgb(115, 8, 177) rgb(115, 8, 177);
+        }
+
+        .status-box {
+            border: 1px solid rgb(199, 199, 199);
+            width: 60%;
+            border-radius: 5px;
+            margin: auto;
+            margin-top: 29px;
+            background-color: white;
+        }
+
+        .comment-list {
+            width: 60%;
+            margin: auto;
+        }
+        .comment-status {
+            border:1px solid rgb(199, 199, 199);
+            width:60%;
+            border-radius:5px;
+            margin:auto;
+            margin-top: 29px;
+        }
+
+       
+
+
+
+        /* Responsive */
+        @media screen and (max-width: 479px) {
+
+            .shortcut-section {
+                float: left;
+                width: 300px;
+                overflow: scroll;
+                height: 1000px;
+                border: 1px solid black;
+                margin-left: 20px;
+                display: none;
+
+            }
+
+            .shortcut-section-right {
+                float: right;
+                width: 300px;
+                position: fixed;
+                right: 0px;
+                height: 700px;
+                overflow: scroll;
+                display: none;
+            }
+
+            .post-box {
+                width: 99%;
+                margin: auto;
+                margin-top: 20px;
+                background-color: white;
+                border-radius: 5px;
+                -webkit-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+                -moz-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+                box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+            }
+
+            .status-box {
+                border: 1px solid rgb(199, 199, 199);
+                width: 99%;
+                border-radius: 5px;
+                margin: auto;
+                margin-top: 29px;
+                background-color: white;
+            }
+
+            .search {
+                width: 29%;
+                margin-right: 100px;
+            }
+
+            .nav-item {
+                display: -webkit-inline-box;
+
+            }
+
+            .title {
+                font-size: 20px;
+            }
+            .comment-list {
+            width: 90%;
+            margin: auto;
+        }
+        .comment-status {
+            border:1px solid rgb(199, 199, 199);
+            width:99%;
+            border-radius:5px;
+            margin:auto;
+            margin-top: 29px;
+        }
+
+
+
+
+
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 900px) {
+            .logo {
+
+
+                color: white;
+                float: left;
+                font-size: 20px;
+                padding-left: 19px;
+                margin-top: 15px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .status-body {
+                text-align: center;
+                color: #3498db;
+                width: 97%;
+                margin: auto;
+                height: auto;
+                background-color: rgb(211, 211, 211);
+                border: 2px solid #3498db;
+            }
+
+            .post-box-style {
+                width: 90%;
+                margin-top: 50px;
+                height: 50px;
+                text-align: center;
+            }
+
+            .menu ul li a {
+
+                text-decoration: none;
+                color: black;
+                margin-right: 20px;
+                color: white;
+
+
+            }
+
+            .menu ul li {
+
+
+                padding-top: 0px;
+                float: right;
+                padding-top: 10px;
+
+            }
+
+            .status {
+                color: black;
+                margin-top: 20px;
+                background-color: white;
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                height: auto;
+
+            }
+
+            .search-style {
+                margin-left: 20px;
+                margin-top: 10px;
+                float: left;
+                border: none;
+                border-bottom: solid 1px white;
+                background-color: transparent;
+                display: none;
+            }
+
+            .icon {
+
+                display: none;
+            }
+
+            .comment-button {
+                width: 39%;
+                font-size: 13px;
+            }
+
+            .shortcut-section {
+
+                display: none;
+
+            }
+
+            .shortcut-section-right {
+
+                display: none;
+            }
+
+            .post-box {
+                width: 99%;
+                margin: auto;
+                margin-top: 20px;
+                background-color: white;
+                border-radius: 5px;
+                -webkit-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+                -moz-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+                box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+            }
+
+            .status-box {
+                border: 1px solid rgb(199, 199, 199);
+                width: 99%;
+                border-radius: 5px;
+                margin: auto;
+                margin-top: 29px;
+                background-color: white;
+            }
+
+            .search {
+                width: 29%;
+                margin-right: 100px;
+            }
+
+            .nav-item {
+                display: -webkit-inline-box;
+
+            }
+
+            .title {
+                font-size: 20px;
+            }
+
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- navbar   -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}"><b>মহারাজপুর ইউনিয়ন</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">হোম</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">পরবর্তী প্রোজেক্ট</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'complain_box' %}">কমপ্লেইন বক্স</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            পরিচয় সন্ধান
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">যোগাযোগ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">সম্পর্কে জানুন</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'gallary' %}">ফটো গ্যালারি</a>
+                  </li>
+                    {% if user.username == "shariar" or user.username == "khurshid" %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'profile' %}">AdminPanel</a>
+                    </li>
+                      
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                      
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'signout' %}">Signout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'signin' %}">Signup/Signin</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar -->
+    <div class="container mt-1 sticky-top">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-between align-items-center breaking-news bg-white">
+                    <div
+                        class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-dark py-2 text-white px-1 news">
+                        <span class="d-flex align-items-center">&nbsp;মহারাজপুর সংবাদ</span>
+                    </div>
+                    <marquee class="news-scroll" behavior="scroll" direction="left" onmouseover="this.stop();"
+                        onmouseout="this.start();"> <a style="color: black;font-size: 29px;" href="#">মোঃ খুরশিদ আলম মিঞা চেয়ারম্যান ৭ নং
+                            মহারাজপুর ইউনিয়ন পরিষদ ঝিনাইদহ সদর,ঝিনাইদহ। সর্বদা আপনাদের সেবাই নিয়জিত। যেকোনো প্রয়োজনে ফোন করুন +8801917226804 (Sanjay
+                            Mukherji) </a> <span class="dot"></span> <a style="color: black;font-size: 29px;"
+                            href="#">খুরশিদ চেয়ারম্যান মহারাজপুর ইউনিয়ন সর্বদা আপনাদের সেবাই নিয়জিত। যেকোনো প্রয়োজনে ফোন
+                            করুন +8801917226804 (Sanjay Mukherji) </a> <span class="dot"></span> <a
+                            style="color: black;font-size: 29px;" href="#">খুরশিদ চেয়ারম্যান মহারাজপুর ইউনিয়ন সর্বদা
+                            আপনাদের সেবাই নিয়জিত। যেকোনো প্রয়োজনে ফোন করুন (চেয়ারম্যান +৮৮০১৭১১০৬২৫৩০) +8801917226804 (Sanjay Mukherji) </a>
+                    </marquee>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr style="color: rgb(115, 8, 177);">
+
+
+
+
+
+
+    <!-- shortcut section -->
+    <!-- ad section -->
+
+    <div class="shortcut-section">
+        <p
+            style="font-size: 29px;font-family: Arial;color: white;background-color: rgb(115, 8, 177);border-radius: 5px;text-align: center;">
+            সেবাসমূহ</p>
+        <hr style="color: rgb(115, 8, 177);">
+        <a href="/">
+            <p style="margin-left: 29px;">হোম</p>
+        </a>
+        <a href="">
+            <p style="margin-left: 29px;">পরবর্তী প্রোজেক্ট</p>
+        </a>
+        <a href="{% url 'complain_box' %}">
+            <p style="margin-left: 29px;">কমপ্লেইন বক্স</p>
+        </a>
+        <a href="">
+            <p style="margin-left: 29px;">পরিচয় সন্ধান</p>
+        </a>
+        <a href="{% url 'contact' %}">
+            <p style="margin-left: 29px;">যোগাযোগ</p>
+        </a>
+        <a href="{% url 'about' %}">
+            <p style="margin-left: 29px;">সম্পর্কে জানুন</p>
+        </a>
+
+        <hr style="color: rgb(115, 8, 177);">
+        <a href="">সরাসরি কথা বলতে চাই ? <span style="color:rgb(115, 8, 177);"> Click here</span></a>
+        <hr style="color: rgb(115, 8, 177);">
+        <a>
+            <p>Gallary</p>
+        </a>
+        <a href="">
+            <p style="margin-left: 29px;">Recent Photo</p>
+        </a>
+        <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">Ad</div>
+            <div class="card-body">
+                {% comment %} <h5 class="card-title">Ad title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p> {% endcomment %}
+                    <div class="crousal1">
+
+                        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                          <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                              aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                              aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                              aria-label="Slide 3"></button>
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                              aria-label="Slide 4"></button>
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                              aria-label="Slide 5"></button>
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
+                              aria-label="Slide 6"></button>
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6"
+                              aria-label="Slide 7"></button>
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7"
+                              aria-label="Slide 8"></button>
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8"
+                              aria-label="Slide 9"></button>
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="9"
+                              aria-label="Slide 10"></button>
+                          </div>
+                          <div class="carousel-inner">
+                            <div class="carousel-item active">
+                              <img src="{% static 'chairman.jpg' %}" class="d-block w-100" alt="...">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5></h5>
+                                <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="{% static 'chairman1.jpg' %}" class="d-block w-100" alt="...">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5></h5>
+                                <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="{% static 'chairman2.jpg' %}" class="d-block w-100" alt="...">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5></h5>
+                                <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="{% static 'chairman3.png' %}" class="d-block w-100" alt="...">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5></h5>
+                                <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="{% static 'chairman4.jpg' %}" class="d-block w-100" alt="...">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5></h5>
+                                <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="{% static 'chairman5.jpg' %}" class="d-block w-100" alt="...">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5></h5>
+                                <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="{% static 'chairman6.jpg' %}" class="d-block w-100" alt="...">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5></h5>
+                                <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="{% static 'chairman7.jpg' %}" class="d-block w-100" alt="...">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5></h5>
+                                <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="{% static 'chairman8.jpg' %}" class="d-block w-100" alt="...">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5></h5>
+                                <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="{% static 'chairman9.jpg' %}" class="d-block w-100" alt="...">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5></h5>
+                                <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                          </button>
+                          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                          </button>
+                        </div>
+                  
+                      </div>
+            </div>
+        </div>
+        <hr style="color: rgb(115, 8, 177);">
+        <a>
+            <p>About</p>
+        </a>
+        <a href="">
+            <p style="margin-left: 29px;">Contact</p>
+        </a>
+        <a href="">
+            <p style="margin-left: 29px;">Faq</p>
+        </a>
+        <a href="">
+            <p style="margin-left: 29px;">About</p>
+        </a>
+        <hr style="color: rgb(115, 8, 177);">
+        <a href="">
+            <p>Feedback</p>
+        </a>
+
+    </div>
+
+
+    <!-- ad section -->
+
+    <div class="shortcut-section-right">
+        <p
+            style="font-size: 29px;font-family: Arial;color: white;background-color: rgb(115, 8, 177);border-radius: 5px;text-align: center;">
+            গুরুত্বপূর্ণ পোস্ট</p>
+        <hr style="color: rgb(115, 8, 177);">
+        <a href="">
+            <p>Top weekly post</p>
+        </a>
+        {% for post in object_list|slice:":15"%}
+        {% if post.author_name != user.get_full_name %}
+        {% for profile_picture in profile_picture_list %}
+        {% if profile_picture.profile_picture_user == post.post_author %}
+        <a href="">
+            <p style="margin-left: 29px;"><img style="border-radius:50%;" src="" width="30" height="30"> {{
+                post.author_name }}</p>
+        </a>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+
+        <hr style="color: rgb(115, 8, 177);">
+        <a href="">সরাসরি কথা বলতে চাই ? <span style="color:rgb(115, 8, 177);"> Click here</span></a>
+        <hr style="color: rgb(115, 8, 177);">
+        <a>
+            <p>Gallary</p>
+        </a>
+        <a href="">
+            <p style="margin-left: 29px;">Recent Photo</p>
+        </a>
+        <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">Ad</div>
+            <!-- <div class="card-body">
+                <h5 class="card-title">Ad title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+            </div> -->
+            <div class="crousal1">
+
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                      aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                      aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                      aria-label="Slide 3"></button>
+                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                      aria-label="Slide 4"></button>
+                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                      aria-label="Slide 5"></button>
+                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
+                      aria-label="Slide 6"></button>
+                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6"
+                      aria-label="Slide 7"></button>
+                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7"
+                      aria-label="Slide 8"></button>
+                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8"
+                      aria-label="Slide 9"></button>
+                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="9"
+                      aria-label="Slide 10"></button>
+                  </div>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="{% static 'chairman.jpg' %}" class="d-block w-100" alt="...">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5></h5>
+                        <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{% static 'chairman1.jpg' %}" class="d-block w-100" alt="...">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5></h5>
+                        <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{% static 'chairman2.jpg' %}" class="d-block w-100" alt="...">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5></h5>
+                        <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{% static 'chairman3.png' %}" class="d-block w-100" alt="...">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5></h5>
+                        <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{% static 'chairman4.jpg' %}" class="d-block w-100" alt="...">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5></h5>
+                        <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{% static 'chairman5.jpg' %}" class="d-block w-100" alt="...">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5></h5>
+                        <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{% static 'chairman6.jpg' %}" class="d-block w-100" alt="...">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5></h5>
+                        <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{% static 'chairman7.jpg' %}" class="d-block w-100" alt="...">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5></h5>
+                        <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{% static 'chairman8.jpg' %}" class="d-block w-100" alt="...">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5></h5>
+                        <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{% static 'chairman9.jpg' %}" class="d-block w-100" alt="...">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5></h5>
+                        <p>চেয়ারম্যান ৭ নং মহারাজপুর ইউনিয়ন।</p>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+          
+              </div>
+        </div>
+        <hr style="color: rgb(115, 8, 177);">
+        <a>
+            <p>About</p>
+        </a>
+        <a href="">
+            <p style="margin-left: 29px;">Contact</p>
+        </a>
+        <a href="">
+            <p style="margin-left: 29px;">Faq</p>
+        </a>
+        <a href="">
+            <p style="margin-left: 29px;">About</p>
+        </a>
+        <hr style="color: rgb(115, 8, 177);">
+        <a href="">
+            <p>Feedback</p>
+        </a>
+    </div>
+    <!-- shortcut section -->
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+
+    {% block content %}
+    {% endblock %}

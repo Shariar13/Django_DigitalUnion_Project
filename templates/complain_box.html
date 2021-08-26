@@ -1,0 +1,161 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+  
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complain Box</title>
+    <style>
+        .complain_box {
+            width: 60%;
+            height: auto;
+            margin: auto;
+            border: 1px solid black;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 479px) {
+            .complain_box {
+            width: 100%;
+            height: auto;
+            margin: auto;
+            border: 1px solid black;
+        }
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+
+
+
+    <div class="complain_box">
+        
+        {% for message in messages %}
+      
+      <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Hey {{ user.get_full_name }}</strong> {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        
+      </div>
+      {% endfor %}
+        <form action="{% url 'complain_form' %}" method="POST">
+            {% csrf_token %}
+            
+                <div style="width: 90%;margin: auto;">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">নাম</label>
+                  <input name="name"type="text" class="form-control" id="exampleInputEmail1" value="{{ user.get_full_name }}">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">মোবাইল নাম্বার</label>
+                    <input name="phone"type="text" class="form-control" id="exampleInputEmail1">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">গ্রাম</label>
+                    <select class="form-select" aria-label="Default select example"name="village">
+                        <option selected>আপনার গ্রাম সিলেক্ট করুন</option>
+                        <option value="বিষয়খালী">বিষয়খালী</option>
+                        <option value="কেশবপুর">কেশবপুর</option>
+                        <option value="কুলফাডাঙ্গা">কুলফাডাঙ্গা</option>
+                        <option value="পরমানন্দপুর">পরমানন্দপুর</option>
+                        <option value="কৃষ্ণপুর">কৃষ্ণপুর</option>
+                        <option value="উত্তর ভবানীপুর">উত্তর ভবানীপুর</option>
+                        <option value="কুতুবপুর">কুতুবপুর</option>
+                        <option value="মায়াধরপুর">মায়াধরপুর</option>
+                        <option value="কুলবাড়ীয়া">কুলবাড়ীয়া</option>
+                        <option value="মহারাজপুর">মহারাজপুর</option>
+                        <option value="হরিপুর">হরিপুর</option>
+                        <option value="পশ্চিম ভবানীপুর">পশ্চিম ভবানীপুর</option>
+                        <option value="রামনগর">রামনগর</option>
+                        <option value="খামারাইল">খামারাইল</option>
+                        <option value="ছোট খড়িখালী">ছোট খড়িখালী</option>
+                        <option value="কয়ারগাছী">কয়ারগাছী</option>
+                        <option value="মুক্তাঙ্গন আবাসন প্রকল্">মুক্তাঙ্গন আবাসন প্রকল্</option>
+                        <option value="নৃসিংহপুর">নৃসিংহপুর</option>
+                        <option value="ভরতপুর">ভরতপুর</option>
+                        <option value="বড় খড়িখালী">বড় খড়িখালী</option>
+                        <option value="আন্দুলবাড়ীয়া">আন্দুলবাড়ীয়া</option>
+                        <option value="কানুহরপুর">কানুহরপুর</option>
+                      </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">ওয়ার্ড</label>
+                    <select class="form-select" aria-label="Default select example"name="word">
+                        <option selected>আপনার গ্রাম সিলেক্ট করুন</option>
+                        <option value="১">১</option>
+                        <option value="২">২</option>
+                        <option value="৩">৩</option>
+                        <option value="৪">৪</option>
+                        <option value="৫">৫</option>
+                        <option value="৬">৬</option>
+                        <option value="৭">৭</option>
+                        <option value="৮">৮</option>
+                        <option value="৯">৯</option>
+                        <option value="১২৩">১২৩</option>
+                        <option value="৪৫৬">৪৫৬</option>
+                        <option value="৭৮৯">৭৮৯</option>
+                      </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">অভিযোগ</label>
+                    <textarea name="complains"type="textarea" class="form-control" id="exampleInputEmail1" placeholder="এখানে থেকে আপনার অভিযোগ লিখুন "></textarea>
+                  </div>
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            
+
+        </form>
+
+    </div>
+
+    <div class="complain_list">
+
+{% for complain in object_list %}
+{% if user.username == "khurshid" %}
+  
+
+  
+
+      <div class="status-box">
+        <div style="text-align:left;">
+            <p style="color:white;background-color: rgb(115, 8, 177);" class="card-header"><a
+                    style="color:white;background-color: rgb(115, 8, 177);text-decoration: none;" href="">
+                    <b>{{complain.name }} অভিযোগ করেছেন </b></a>
+                <small>
+                    <span style="margin-right: 10px;float: right;">
+                        </span></small>
+            </p>
+
+            <p style="color:black;margin:20px;">{{ complain.complain|safe|truncatewords:"50" }} <a
+                    style="text-decoration: none;color: rgb(115, 8, 177);"
+                    href="">Continue</a></p>
+
+        </div>
+        <hr style="color: black;">
+      
+        
+
+    </div>
+    {% endif %}
+    {% endfor %}
+
+    </div>
+    
+
+
+
+
+
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,491 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+  
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+  <link rel="stylesheet" href="{% static 'fontawesome/CSS/all.CSS' %}">
+  <link rel="stylesheet" href="{% static 'fontawesome/CSS/all.CSS' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'signup.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.js" integrity="sha512-aGWPnmdBhJ0leVHhQaRASgb0InV/Z2BWsscdj1Vwt29Oic91wECPixuXsWESpFfCcYPLfOlBZzN2nqQdMxlGTQ==" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.css" integrity="sha512-vEia6TQGr3FqC6h55/NdU3QSM5XR6HSl5fW71QTKrgeER98LIMGwymBVM867C1XHIkYD9nMTfWK2A0xcodKHNA==" crossorigin="anonymous" />
+
+  <style>
+    .status_scroll {
+      overflow: scroll;
+    }
+
+   
+
+    .footer-class>ul>li {
+      display: inline;
+      color: rgb(129, 129, 129);
+      margin: 30px;
+      clear: both;
+    }
+
+    .profile-frame {
+      width: 60%;
+      height: auto;
+      margin: auto;
+      text-align: center;
+      -webkit-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+      -moz-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+      box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+      border-radius: 11px;
+      padding-bottom: 29px;
+      
+
+    }
+
+    .status-form-frame {
+      text-align: center;
+      width: 100%;
+      margin: auto;
+      float: right;
+      border: none;
+      border-radius: 11px;
+      -webkit-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+      -moz-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+      box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+
+
+    }
+
+    .status-form {
+      width: 93%;
+      margin-top: 0px;
+      margin: auto;
+      border-radius: 20px;
+      border: none;
+      margin-top: 10px;
+      background-color: rgb(238, 238, 238);
+
+
+    }
+    .emojionearea > .emojionearea-editor {
+    min-height: 70px;
+    max-height: 70px;
+    width: 100%
+}
+  
+
+    .social-network {
+      text-align: center;
+      color: #80bd9e;
+      margin-top: 20px;
+      margin-right: 29px;
+    }
+
+    .social-link {
+      color: #80bd9e;
+      margin: 10px;
+    }
+
+    .button-style {
+      width: 29%;
+      height: auto;
+      -webkit-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+      -moz-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+      box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+      border-radius: 11px;
+      overflow: hidden;
+      float: right;
+      margin-top: 0px;
+      
+
+    }
+
+    .button {
+      color: rgb(115, 8, 177);;
+      /* width:300px; */
+      /* padding:60px; */
+      /* position:absolute; */
+      /* top:50%; */
+      /* left: 50%; */
+      /* transform:translate(-50%,-50%); */
+      /* text-align:center;
+			width:50%;
+			height:200px;
+			margin-top:29px; */
+    }
+
+    .button img {
+      width: 50%;
+    }
+
+
+    .button input[type="submit"] {
+      border: 0;
+      color: rgb(115, 8, 177);;
+      background: none;
+      /* display: block; */
+      /* margin: 1px auto; */
+      margin: 15px;
+      text-align: center;
+      border: 1px solid rgb(115, 8, 177);;
+      padding: 5px 5px;
+      width: 200px;
+      outline: none;
+      border-radius: 10px;
+      transition: 0.30s;
+      cursor: pointer;
+
+    }
+
+
+
+    .button input[type="submit"]:hover {
+      background: rgb(115, 8, 177);;
+      color: white;
+      border: rgb(115, 8, 177);;
+    }
+
+    .button input[type="submit"]:focus,
+    .box input[type="password"] {
+      width: 280px;
+      border-color: black;
+    }
+
+    .button dt {
+      color: rgb(115, 8, 177);
+    }
+
+    body {
+      scrollbar-width: none;
+      scrollbar-color: rgb(115, 8, 177) rgb(115, 8, 177);
+    }
+    .full_body{
+      background-color: white;
+      width: 70%;
+      text-align: center;
+      margin: auto;
+    }
+    .status_body{
+      background-color: white;
+      width: 70%;
+      margin: auto;
+      height: auto;
+
+    }
+    .edit_profile{
+      background-color: white;
+      color: rgb(115, 8, 177);;
+      border:1px solid rgb(115, 8, 177);;
+      margin-left: 10px;
+    }
+    .edit_profiles{
+      background-color: white;
+      color: rgb(115, 8, 177);;
+      border:1px solid rgb(115, 8, 177);;
+      margin-left: 10px;
+      display: none;
+    }
+
+
+
+
+
+    /* Responsive */
+    @media screen and (max-width: 900px) {
+      .profile-frame {
+        width: 99%;
+        height: auto;
+        border: 1px solid rgb(115, 8, 177);;
+        margin: auto;
+        text-align: center;
+
+      }
+
+    
+      .status-body {
+        width: 100%;
+        margin: auto;
+      }
+
+      .nav-item {
+        display: -webkit-inline-box;
+
+      }
+
+      .title {
+        font-size: 20px;
+      }
+      .button-style {
+      width: 90%;
+      height: auto;
+      -webkit-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+      -moz-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+      box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+      border-radius: 11px;
+      overflow: hidden;
+      margin-top: 0px;
+      margin: auto;
+      position: relative;
+      display: none;
+      
+
+    }
+    .status-form-frame {
+      text-align: center;
+      width: 100%;
+      margin: auto;
+      border: none;
+      border-radius: 11px;
+      -webkit-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+      -moz-box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+      box-shadow: 0px 0px 2px 1px rgba(158, 158, 158, 1);
+
+
+    }
+
+    .status-form {
+      width: 93%;
+      margin-top: 0px;
+      height: 60px;
+      border-radius: 20px;
+      border: none;
+      margin-top: 10px;
+      background-color: rgb(238, 238, 238);
+
+    }
+    .full_body{
+      background-color: white;
+      width: 100%;
+      /* text-align: center; */
+      margin: auto;
+    }
+    .status_body{
+      background-color: white;
+      width: 100%;
+      margin: auto;
+      height: auto;
+      overflow: auto;
+      
+
+    }
+    .edit_profiles{
+      background-color: white;
+      color: rgb(115, 8, 177);;
+      border:1px solid rgb(115, 8, 177);;
+      margin-left: 10px;
+      display: inline-block;
+    }
+
+    }
+  </style>
+
+
+
+
+</head>
+
+
+<body>
+
+
+
+  <!-- dsfmlsdfldsflk -->
+
+  <div class="profile-frame">
+    <div>
+
+      {% for profile_picture in profile_picture_list %}
+      {% if profile_picture.profile_picture_user == user.username %}
+      <img style="border-radius:50%;" src="" width="100" height="100">
+      {% endif %}
+      {% endfor %}
+    </div>
+    {% comment %} <img style="border-radius: 0%;" src="" height="100" width="100"> {% endcomment %}
+    <p style="font-size: 29px;"><b>{{ user.get_full_name }}</b></p>
+
+    <a href=""><button
+        class="edit_profile"><i
+          class="fas fa-pencil-alt"></i> Profile Pic</button></a>
+    <a href=""><button
+    class="edit_profiles"><i
+          class="fas fa-pencil-alt"></i> Edit
+        profile</button></a>
+    <a href=""><button
+    class="edit_profiles"><i
+          class="fas fa-pencil-alt"></i> Setting</button></a>
+
+
+
+    <div class="social-network">
+      {% for social_media_account in social_media_account_list %}
+      {% if social_media_account.username == user.username %}
+      <ul>
+        <li>
+          <a class="social-link" href="{{ social_media_account.facebook }}"><i
+              class="fab fa-facebook-square fa-3x"></i></a>
+          <a class="social-link" href="{{ social_media_account.instagram }}"><i
+              class="fab fa-instagram-square fa-3x"></i></a>
+          <a class="social-link" href="{{ social_media_account.twitter }}"><i
+              class="fab fa-twitter-square fa-3x"></i></a>
+          <a class="social-link" href="{{ social_media_account.gmail }}"><i
+              class="fas fa-envelope-square fa-3x"></i></a>
+          <a class="social-link" href="{{ social_media_account.github }}"><i class="fab fa-github-square fa-3x"></i></a>
+        </li>
+      </ul>
+      {% endif %}
+      {% endfor %}
+    </div>
+
+  </div>
+
+  <!-- kdnsldjnfvskdvfnkdj -->
+
+
+
+
+
+  <div class="container-fluid">
+    <br>
+
+
+  </div>
+
+
+
+  <div class="full_body">
+
+    <div class="status_body">
+
+
+
+
+
+      <form action="{% url 'status_form' %}" method="post" role="form">
+        {% csrf_token %}
+        <div class="status-form-frame">
+          <input value="{{ user.username }}" name="username" type="hidden">
+          <input value="{{ user.email }}" name="email" type="hidden">
+          <input value="{{ user.get_full_name }}" name="name" type="hidden">
+          <textarea style="resize:none;"class="status-form" id="status"type="text" name="status_name" id="status_name" placeholder="Post Your Question?"></textarea>
+          <!-- </div>
+            <div style="text-align:center;"> -->
+          <button type="submit"
+            style="height:29px;color:white;background-color:rgb(115, 8, 177);;border-radius:20px;margin-top:29px;width:70px;border:rgb(115, 8, 177);;margin-bottom: 5px;">Post</button>
+        </div>
+      </form>
+     
+
+
+
+
+
+     
+      {% for post in object_list %}
+ 
+ 
+     
+
+      <div style="border:1px solid rgb(199, 199, 199);width:100%;border-radius:5px;margin-top: 20px;float: right;">
+
+        <div style="text-align:left;">
+          <p style="color:white;background-color: rgb(115, 8, 177);" class="card-header"><b>{{ post.author_name}}</b>
+            <small><span style="float:right;margin-right: 10px;">
+                {{ post.date }}</span></small>
+          </p>
+
+
+
+          <p style="color:black;margin:20px;">{{ post.status|safe|truncatewords:"70" }}<a
+              style="text-decoration: none;color: rgb(115, 8, 177);;" href="{% url 'comments' post.pk %}"> ...Continue</a></p>
+
+        </div>
+        <hr style="color: black;">
+
+        {% csrf_token %}
+        <a href=""><button
+            style="margin-bottom:10px;width: 30%;height:29px;border:black;border-radius:11px;background-color: rgb(115, 8, 177); ; color: white;">Report</button></a>
+        <a href="{% url 'comments' post.pk %}"><button
+            style="margin-bottom:10px;margin-left:10px;margin-right:10px;width: 30%;height:29px;border:black;border-radius:11px;background-color: rgb(115, 8, 177); ; color: white;">Comment</button></a>
+        <a href=""><button
+            style="margin-bottom:10px;width: 30%;height:29px;border:black;border-radius:11px;background-color: #ededed ;background-color: rgb(115, 8, 177); ; color: white;">Edit</button></a>
+
+
+
+      </div>
+      <br>
+      <!-- <hr style="width: 60%;color: black;float: right;"> -->
+   
+      {% endfor %}
+
+
+
+
+
+      <br>
+      <br>
+    </div>
+    <!-- <div class="button-style">
+      <div class="button">
+        <div style="text-align: center;background-color: rgb(115, 8, 177);;color: white;">
+          <p style="font-size: 29px;"><b>Account</b></p>
+        </div>
+
+        <a href=""><input type="submit" value="Edit Profile         >"><br></a>
+        <a href=""><input type="submit" value="Profile Picture           >"><br></a>
+        <a href=""><input type="submit" value="Account Setting          >"><br></a>
+        <a href=""><input type="submit" value="Sign out            >"><br></a>
+
+
+      </div>
+
+    </div> -->
+
+  </div>
+
+
+
+
+
+  <!-- </div>
+     
+
+    </div>
+    
+  </div> -->
+
+
+
+
+
+
+ 
+
+
+
+  
+
+  {% comment %} <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script> {% endcomment %}
+
+
+
+
+  <script>
+  $("#status").emojioneArea({
+          pickerPosition:"bottom"
+  });
+  </script>
+</body>
+
+</html>
+{% endblock content %}

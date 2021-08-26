@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+    <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+
+    <link rel="stylesheet" href="{% static 'fontawesome/CSS/all.CSS' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+
+    <style>
+        .nav-item>a:hover {
+
+      border-bottom: 5px solid white;
+      
+    }
+
+        .footer-class>ul>li {
+            display: inline;
+            color: rgb(129, 129, 129);
+            margin: 30px;
+        }
+
+        .delete-post-frame {
+            height: auto;
+            width: 70%;
+            margin: auto;
+        }
+
+        .delete-post {
+            border: 1px solid rgb(199, 199, 199);
+            width: 90%;
+            border-radius: 5px;
+            margin: auto;
+            margin-top: 29px;
+        }
+
+
+
+
+        /* Responsive */
+        @media screen and (max-width: 900px) {
+            .delete-post-frame {
+                height: auto;
+                width: 90%;
+                margin: auto;
+            }
+
+            .delete-post {
+                border: 1px solid rgb(199, 199, 199);
+                width: 99%;
+                border-radius: 5px;
+                margin: auto;
+                margin-top: 29px;
+            }
+             .title{
+                         font-size:20px;
+      }
+
+        }
+    </style>
+</head>
+
+<body>
+    {% if user.is_authenticated %}
+
+
+
+
+
+
+    <div class="delete-post-frame">
+        <div class="delete-post">
+
+            <div style="text-align:left;">
+            {% if user.username == post.post_author %}
+                <p style="color:white;background-color: rgb(115, 8, 177);" class="card-header">
+                    <b>{{post.author_name}}</b><small><span style="float:right;">
+                            {{ post.date }}</span></small>
+                </p>
+                
+                
+
+
+
+                <p style="color:black;margin:20px;">{{ post.status }}</p>
+                {% else %}
+                <p>You don't have access to delete this post.</p>
+
+            </div>
+            {% endif %}
+            <hr style="color: black;">
+            <div>
+
+
+            </div>
+            <br>
+        </div>
+        <br>
+        <hr style="width: 90%;color: black;margin: auto;">
+        {% if user.username == post.post_author %}
+        <div style="text-align: center;">
+            <form method="post">
+                {% csrf_token %}
+                <p style="font-size: 29px;"><b>Are you sure to want to delete this post?</b></p>
+                <button
+                    style="background-color: rgb(115, 8, 177);color: white;border: rgb(115, 8, 177);width: 70px;border-radius: 11px;">Yes</button>
+
+            </form>
+        </div>
+        {% endif %}
+    </div>
+
+
+
+
+    {% endif %}
+    {% comment %} <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script> {% endcomment %}
+</body>
+
+
+</html>
