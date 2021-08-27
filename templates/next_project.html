@@ -1,0 +1,108 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+  
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complain Box</title>
+    <style>
+        .complain_box {
+            width: 60%;
+            height: auto;
+            margin: auto;
+            border: 1px solid black;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 479px) {
+            .complain_box {
+            width: 100%;
+            height: auto;
+            margin: auto;
+            border: 1px solid black;
+        }
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+
+
+{% if user.username == "khurshid" %}
+  
+
+    <div class="complain_box">
+        
+        {% for message in messages %}
+      
+      <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Hey {{ user.get_full_name }}</strong> {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        
+      </div>
+      {% endfor %}
+        <form action="{% url 'project_form' %}" method="POST">
+            {% csrf_token %}
+            
+            <div class="mb-3">
+                <textarea name="project"type="textarea" class="form-control" id="exampleInputEmail1" placeholder="পরবর্তী প্রোজেক্ট সম্পর্কে লিখুন "></textarea>
+              </div>
+              <div style="text-align: center;">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+              
+            
+
+        </form>
+
+    </div>
+    {% endif %}
+
+    <div class="complain_list">
+
+{% for next_project in object_list %}
+<div style="width: 60%;margin: auto;text-align: center;">
+    <h4>মহারাজপুর ইউনিয়ন এর সকল প্রোজেক্ট এর তালিকা </h4>
+
+</div>
+
+      <div class="status-box">
+        <div style="text-align:left;">
+            <p style="color:white;background-color: rgb(115, 8, 177);" class="card-header"><a
+                    style="color:white;background-color: rgb(115, 8, 177);text-decoration: none;" href="">
+                    <b>৭ নং মহারাজপুর ইউনিয়ন </b></a>
+                <small>
+                    <span style="margin-right: 10px;float: right;">
+                        </span></small>
+            </p>
+
+            <p style="color:black;margin:20px;">{{ next_project.project|safe|truncatewords:"50" }} <a
+                    style="text-decoration: none;color: rgb(115, 8, 177);"
+                    href="">Continue</a></p>
+
+        </div>
+        <hr style="color: black;">
+      
+        
+
+    </div>
+    {% endfor %}
+
+    </div>
+    
+
+
+
+
+
+    {% endblock %}
+</body>
+</html>

@@ -53,3 +53,11 @@ class complain (models.Model):
         if len(self.complain)>50:
             return self.complain[:50]+"..."
         return self.complain
+
+class next_project (models.Model):
+    project=models.CharField(max_length=9000)
+    
+    def __str__(self):
+        if len(self.project)>50:
+            return self.project[:50]+"..."
+        return self.project

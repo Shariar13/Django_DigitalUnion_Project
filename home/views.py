@@ -11,6 +11,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.db.models import Count
 from .models import complain
+from .models import next_project
 
 
 
@@ -35,6 +36,11 @@ class edit(UpdateView):
 class complain_box(ListView):
     template_name = "complain_box.html"
     model = complain
+    ordering = ['-id']
+
+class project(ListView):
+    template_name = "next_project.html"
+    model = next_project
     ordering = ['-id']
 
 class delete(DeleteView):
@@ -109,6 +115,18 @@ def complain_form(request):
         complain_database.save()
         messages.success(request,"We have received your complain & we will contact soon.")
         return redirect('complain_box')
+
+def project_form(request):
+    if request.method=="POST":
+        project_details=request.POST['project']
+        if project_details == "":
+            messages.error(request,"Please write something")
+            return redirect('project')
+        
+        project_details_database=next_project(project=project_details)
+        project_details_database.save()
+        messages.success(request,"Your next project is uploaded successfully")
+        return redirect('project')
         
 
 class delete_comment(DeleteView):

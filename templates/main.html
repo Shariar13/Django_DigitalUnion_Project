@@ -353,7 +353,7 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">হোম</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">পরবর্তী প্রোজেক্ট</a>
+                        <a class="nav-link" href="{% url 'project' %}">পরবর্তী প্রোজেক্ট</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'complain_box' %}">কমপ্লেইন বক্স</a>
@@ -446,7 +446,7 @@
         <a href="/">
             <p style="margin-left: 29px;">হোম</p>
         </a>
-        <a href="">
+        <a href="{% url 'project' %}">
             <p style="margin-left: 29px;">পরবর্তী প্রোজেক্ট</p>
         </a>
         <a href="{% url 'complain_box' %}">

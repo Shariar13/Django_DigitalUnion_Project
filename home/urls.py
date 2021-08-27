@@ -20,6 +20,8 @@ urlpatterns = [
     path('gallary/',views.gallary,name='gallary'),
     path('complain_box/',views.complain_box.as_view(),name="complain_box"),
     path('complain_form/',views.complain_form,name='complain_form'),
+    path('project/',views.project.as_view(),name='project'),
+    path('project_form/',views.project_form,name='project_form'),
     
 
     
